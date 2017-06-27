@@ -1,0 +1,17 @@
+{
+  "name": "businessmaster",
+  "version": "1.0.0",
+  "description": "Ionic project",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "admin",
+    "123456"
+  ],
+  "author": "Liu Shiqin",
+  "license": "ISC"
+}

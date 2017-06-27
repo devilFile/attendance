@@ -1,0 +1,75 @@
+<ion-view view-title="签到">
+
+  <ion-header-bar class="bar bar-positive">
+    <button class="button button-icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"><b>签到</b></h1>
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="list">
+
+      <div class="item item-divider item-borderless">
+        <p><b>课程信息</b></p>
+      </div>
+
+      <div class="item item-borderless">
+        <p>课程名称：{{courseInfo.name}}</p>
+        <p>时间：{{courseInfo.time}} </p>
+        <p>教室：{{courseInfo.classroom}}</p>
+      </div>
+
+      <div class="item item-divider item-borderless">
+        <p><b>教室座位图</b></p>
+      </div>
+
+      <div class="item item-borderless row-no-padding">
+
+
+        <div class="row row-no-padding">
+          <div class="col-20" ng-repeat="seat in seatInfo.seats">
+            <img style="height: 30%;" ng-src="pages/studentPages/signIn/img/{{seat.imgProfile}}">
+            <input type="radio" id="{{seat.i}}" name="seatRadios" ng-disabled="{{seat.occupied}}">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item item-divider item-borderless ">
+        <p><b>签到</b></p>
+      </div>
+
+      <div class="item row-no-padding item-borderless" style="height: 250px;">
+        <section id="cd-timeline" class="cd-container">
+          <div ng-repeat="activity in timeline">
+            <div class="cd-timeline-block">
+              <!-- CUSTOMIZE YOUR STYLE USING DEFAULT IONIC VALUES SUCH AS POSITIVE, CALM, BALANCED,... -->
+              <div class="cd-timeline-icon positive">
+                <i class="ion-image timelineIcon" ng-if="(activity.type=='picture')"></i>
+                <i class="ion-ios-videocam timelineIcon" ng-if="activity.type=='video' "></i>
+                <i class="ion-location timelineIcon" ng-if="activity.type=='location'"></i>
+                <i class="ion-android-textsms timelineIcon" ng-if="activity.type=='text'"></i>
+              </div>
+              <!-- CUSTOMIZE YOUR STYLE USING DEFAULT IONIC VALUES SUCH AS POSITIVE, CALM, BALANCED,... -->
+              <div class="cd-timeline-content positive">
+                <h5 class="marginBottom0 marginTop0">{{activity.title}}</h5>
+                <p class="marginTop5 cd-author">{{activity.date | date: "HH:mm:ss"}}</p>
+                <p class="timelineText">{{activity.status}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+
+  </ion-content>
+
+  <div class="bar bar-footer bar-positive">
+    <div class=" button-bar">
+      <a style="margin-right: 10px;" class="button button-clear light" ng-click="signInFunction()"><b>签到</b></a>
+    </div>
+  </div>
+
+</ion-view>

@@ -1,0 +1,60 @@
+<ion-view view-title="考勤统计">
+  <ion-header-bar class="bar bar-positive">
+    <button class="button button-icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"><b>考勤统计</b></h1>
+  </ion-header-bar>
+
+  <ion-content class="has-header">
+    <div class="list">
+
+
+      <!--select选框
+        <label class="item item-input item-select">
+          <div class="input-label">
+            迟到5次
+          </div>
+          <select>
+            <option>2017-06-22（星期四）08:30</option>
+            <option>2017-06-22（星期四）08:30</option>
+            <option>2017-06-26（星期一）14:00</option>
+          </select>
+        </label>
+
+        -->
+
+
+
+
+      <div>
+        <ion-item class="item item-icon-right" ng-click="toggleLeaveData(leaveData)" ng-class="{active: isLeaveDataShown(leaveData)}">
+          请假 {{leaveData.number}} 次
+          &nbsp;
+          <i class="icon" ng-class="isLeaveDataShown(leaveData) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-repeat="item in leaveData.items" ng-show="isLeaveDataShown(leaveData)">
+          {{item.date}} + ({{item.weekDay}}) + {{item.time}} + {{item.courseName}}
+        </ion-item>
+      </div>
+
+
+      <div>
+        <ion-item class="item item-icon-right" ng-click="toggleabsentData(absentData)" ng-class="{active: isabsentDataShown(absentData)}">
+          旷课 {{absentData.number}} 次
+          &nbsp;
+          <i class="icon" ng-class="isabsentDataShown(absentData) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-repeat="item in absentData.items" ng-show="isabsentDataShown(absentData)">
+          {{item.date}} + ({{item.weekDay}}) + {{item.time}} + {{item.courseName}}
+        </ion-item>
+      </div>
+
+
+    </div>
+
+  </ion-content>
+
+
+
+</ion-view>

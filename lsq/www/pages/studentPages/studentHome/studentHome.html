@@ -1,0 +1,50 @@
+<ion-view view-title="首页">
+
+  <ion-header-bar class="bar bar-positive">
+      <h1 class="title"><b>首页</b></h1>
+  </ion-header-bar>
+
+  <ion-content class="has-header">
+    <div class="row row-no-padding">
+      <img style="height: 10%" class="full-image image-title " src="pages/home/img/banner.png">
+    </div>
+
+
+    <div class="item item-divider item-borderless ">
+      <b>考勤</b>
+    </div>
+
+    <div class="item item-borderless no-lines light-bg row quich-actions" >
+      <a style="padding-right: 1px;" class="col tab-item quick-action-item col-25 " href="#/signIn">
+        <div>
+          <p><img  style=" margin-top: 10px; width: 40%; height:40%;" src="pages/studentPages/studentHome/img/sign_in.png"></p>
+          <p>签到</p>
+        </div>
+      </a>
+      <a style="padding-right: 1px;" class="col tab-item quick-action-item col-25 light-bg " href="#/askForLeave" >
+        <p><img style="margin-top: 10px; width: 40%; height:40%;" src="pages/studentPages/studentHome/img/ask_for_leave.png"></p>
+        <p>请假</p>
+      </a>
+      <a style="padding-right: 1px;" class="col tab-item quick-action-item col-25 light-bg " href="#/studentAttendanceSheet" >
+        <p><img style="margin-top: 10px; width: 40%; height:40%;" src="pages/studentPages/studentHome/img/attendance_sheet.png"></p>
+        <p>考勤汇总</p>
+      </a>
+    </div>
+
+
+    <div class="item item-divider item-borderless">
+      <b>成绩</b>
+    </div>
+
+
+    <div class="item light-bg row quich-actions item-borderless">
+      <a style="padding-right: 1px;" class="col tab-item quick-action-item col-25 " >
+        <p><img style="margin-top: 10px; width: 40%; height:40%;" src="pages/studentPages/studentHome/img/student_grade.png"></p>
+        <p >平时成绩</p>
+      </a>
+    </div>
+
+  </ion-content>
+
+  <company-directive bottom="0px"></company-directive>
+</ion-view>

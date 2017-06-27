@@ -1,0 +1,31 @@
+/** sass 让css语言更强大，优雅。它允许你使用变量，嵌套规则，mixins,导入等众多功能**/
+/** ng-class 单击变样式**/
+.item-active{
+  background-color: #ffffff;
+  border-left-color: #ffffff;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+.toast-container{
+  position:fixed;
+  width: 100%;
+  bottom: 50px;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transition: opacity.8s;
+  &.active{
+    opacity: 1;
+  }
+}
+.toast-message{
+  width: 270px;
+  margin: 5px auto;
+  padding: 5px;
+  //background-color: red;
+  color: red;
+  text-align: center;
+  border-radius: 7px;
+  font-size: 14px;
+
+}
+

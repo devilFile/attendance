@@ -1,0 +1,67 @@
+<ion-view view-title="设置">
+  <ion-header-bar class="bar bar-assertive">
+    <button class="button button-icon icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"> <b>店铺设置</b></h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="list">
+      <div class="item item-divider">
+        短信设置
+      </div>
+      <li class="item item-toggle" >
+        自动发送消费提醒短信
+        <label class="toggle toggle-calm">
+          <input type="checkbox">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+
+      <div class="item item-divider">
+        我的店铺
+      </div>
+      <a class="item item-icon-right"  href="#/shop">
+        店铺信息
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+      <a class="item item-icon-right" href="#/changePwd">
+        修改密码
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+      <li class="item item-toggle" >
+        手势密码
+        <label class="toggle toggle-calm">
+          <input type="checkbox">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+
+      <div class="item item-divider">
+        其他服务
+      </div>
+      <a class="item item-icon-right"   href="#/aboutUs">
+        关于我们
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+      <a class="item item-icon-right"  href="">
+        联系客服
+        <span  class="item-note" >400-600-6815</span>
+
+      </a>
+
+      <div class="item item-divider">
+      </div>
+      <a class="item item-icon-right" ng-click="logout()">
+        安全退出
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+
+    </div>
+
+  </ion-content>
+
+  <!--<company-directive bottom="0px"></company-directive>-->
+</ion-view>

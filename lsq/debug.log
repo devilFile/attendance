@@ -1,0 +1,6 @@
+[0113/140038:ERROR:process_info.cc(330)] VirtualQueryEx: 拒绝访问。 (0x5)
+[0113/140038:ERROR:process_info.cc(547)] ReadMemoryInfo failed
+[0113/140038:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0113/140038:ERROR:exception_snapshot_win.cc(87)] thread ID 16220 not found in process
+[0113/140038:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed
+[0113/140038:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
