@@ -34,7 +34,7 @@
               title:'警告',
               template:'您的用户名或者密码错误',
               okText:'确定',
-              okType:'button-assertive'
+              okType:'button-positive'
             });
           }
         };

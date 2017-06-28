@@ -29,12 +29,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
   $stateProvider
 
-    /**.state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'pages/studentPages/studentHome/studentHome.html',
-    controller: 'AppCtrl'
-  })**/
+    .state('app', {
+      url: '/app',
+      abstract: true,
+      templateUrl: 'pages/menu/menu.html',
+      controller: 'AppCtrl'
+    })
+
+      /*
+    //教师首页
+    .state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'pages/teacherPages/teacherHome/teacherHome.html',
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+    */
+
+
+    //学生首页
+    .state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'pages/studentPages/studentHome/studentHome.html',
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+      
 
     //引导页面
     .state('welcome',{
@@ -48,6 +74,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       url:'/',
       controller: 'MainCtrl'
     })
+
+
 
     //登录页面
     .state('login',{
@@ -88,13 +116,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
     })
 
 
-    //教师首页
-    .state('app', {
-      url: '/app',
-      abstract: true,
-      templateUrl: 'pages/teacherPages/teacherHome/teacherHome.html',
-      controller: 'AppCtrl'
-    })
+
 
     //教师当前考勤
     .state('attendanceAtPresent',{
@@ -163,15 +185,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'pages/home/home.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
+
 
   .state('app.single', {
     url: '/playlists/:playlistId',
