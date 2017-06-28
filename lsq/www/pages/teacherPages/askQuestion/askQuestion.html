@@ -1,0 +1,75 @@
+<ion-view view-title="随机提问">
+
+  <ion-header-bar class="bar bar-positive">
+    <button class="button button-icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"><b>随机提问</b></h1>
+
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="list">
+
+      <div class="item item-divider item-borderless">
+        <p><b>课程信息</b></p>
+      </div>
+
+      <div class="item item-borderless">
+        <p>课程名称：{{courseInfo.name}}</p>
+        <p>时间：{{courseInfo.time}} </p>
+        <p>教室：{{courseInfo.classroom}}</p>
+      </div>
+
+      <div class="item item-divider item-borderless">
+        <p><b>学生列表</b></p>
+      </div>
+
+
+      <div class="item ">
+        <b>选取的学生为:  {{studentChoosen.Name}}</b>
+      </div>
+
+      <ion-radio ng-repeat="item in studentList"
+                 ng-value= "item.Name"
+                 ng-model="studentChoosen.Name"
+                 ng-change="changeStudentChoosen(item)">
+        {{item.StudentNo}} {{ item.Name }}
+      </ion-radio>
+    </div>
+
+
+
+
+    </div>
+
+
+  </ion-content>
+  <div class="bar bar-footer bar-positive">
+    <div class=" button-bar">
+      <a style="margin-right: 10px;" class="button button-clear light" ng-click="modal.show()"><b>提问</b></a>
+    </div>
+  </div>
+
+  <script id="setGradeModal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title"><b>提问打分</b></h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <div class="list">
+
+          <label class="item item-input">
+            <span class="input-label">提问成绩</span>
+            <input ng-model="newUser.firstName" type="text">
+          </label>
+
+          <button class="button button-full button-positive" ng-click="submitQuestionGrade()">提交</button>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
+
+
+</ion-view>

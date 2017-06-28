@@ -1,0 +1,114 @@
+<ion-view view-title="当前考勤">
+
+  <ion-header-bar class="bar bar-positive">
+    <button class="button button-icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"><b>当前考勤</b></h1>
+    <style>
+      .col_now{
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        text-align: center;
+      }
+    </style>
+
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="list">
+
+      <div class="item item-divider item-borderless">
+        <p><b>课程信息</b></p>
+      </div>
+
+      <div class="item item-borderless">
+        <p>课程名称：{{courseInfo.name}}</p>
+        <p>时间：{{courseInfo.time}} </p>
+        <p>教室：{{courseInfo.classroom}}</p>
+      </div>
+
+      <div class="item item-divider item-borderless">
+        <p><b>已签到</b></p>
+      </div>
+
+      <div>
+        <div class="row ">
+          <div class="col col_now">
+            <div class="col-demo">学号</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">姓名</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">班级</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">时间</div>
+          </div>
+        </div>
+
+        <div class="row" ng-repeat="item in attendanceAtPresentInfo">
+          <div class="col col_now">
+            <div class="col-demo">{{item.No}}</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">{{item.Name}}</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">{{item.Class}}</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">{{item.SignInTime| date: "HH:mm"}}</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item item-divider item-borderless ">
+        <p><b>未签到</b></p>
+      </div>
+
+
+
+      <div>
+        <div class="row">
+          <div class="col col_now">
+            <div class="col-demo" >学号</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">姓名</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">班级</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">时间</div>
+          </div>
+        </div>
+
+        <div class="row" ng-repeat="item in absentAtPresentInfo">
+          <div class="col col_now">
+            <div class="col-demo">{{item.No}}</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">{{item.Name}}</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">{{item.Class}}</div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo">{{item.SignInStatus}}</div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </ion-content>
+
+
+</ion-view>

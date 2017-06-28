@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','starter.directives','ngCordova','ngMessages'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','starter.directives','ngCordova','ngMessages','ionic-datepicker'])
 
 
 
@@ -29,12 +29,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
   $stateProvider
 
-    .state('app', {
+    /**.state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'pages/studentPages/studentHome/studentHome.html',
     controller: 'AppCtrl'
-  })
+  })**/
 
     //引导页面
     .state('welcome',{
@@ -55,6 +55,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       templateUrl: 'pages/login/login.html',
       controller: 'LoginCtrl'
     })
+
+
+
 
     //学生签到
     .state('signIn',{
@@ -85,6 +88,56 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
     })
 
 
+    //教师首页
+    .state('app', {
+      url: '/app',
+      abstract: true,
+      templateUrl: 'pages/teacherPages/teacherHome/teacherHome.html',
+      controller: 'AppCtrl'
+    })
+
+    //教师当前考勤
+    .state('attendanceAtPresent',{
+      url:'/attendanceAtPresent',
+      templateUrl: 'pages/teacherPages/attendanceAtPresent/attendanceAtPresent.html',
+      controller: 'AttendanceAtPresentCtrl'
+    })
+
+    //教师考勤统计
+    .state('teacherAttendanceSheet',{
+      url:'/teacherAttendanceSheet',
+      templateUrl: 'pages/teacherPages/teacherAttendanceSheet/teacherAttendanceSheet.html',
+      controller: 'TeacherAttendanceSheetCtrl'
+    })
+
+
+    //教师课堂抽问
+    .state('askQuestion',{
+      url:'/askQuestion',
+      templateUrl: 'pages/teacherPages/askQuestion/askQuestion.html',
+      controller: 'AskQuestionCtrl'
+    })
+
+    //教师课堂点名
+    .state('askForAttendance',{
+      url:'/askForAttendance',
+      templateUrl: 'pages/teacherPages/askForAttendance/askForAttendance.html',
+      controller: 'AskForAttendanceCtrl'
+    })
+
+    //教师成绩录入
+    .state('scoreRecording',{
+      url:'/scoreRecording',
+      templateUrl: 'pages/teacherPages/scoreRecording/scoreRecording.html',
+      controller: 'ScoreRecordingCtrl'
+    })
+
+
+
+
+
+
+
     //设置
     .state('setting',{
       url:'/setting',
@@ -92,7 +145,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       controller: 'SettingCtrl'
     })
 
-    
+
   .state('app.search', {
     url: '/search',
     views: {

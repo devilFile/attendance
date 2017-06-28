@@ -1,0 +1,54 @@
+<ion-view view-title="随机考勤">
+
+  <ion-header-bar class="bar bar-positive">
+    <button class="button button-icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"><b>随机考勤</b></h1>
+
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="list">
+
+      <div class="item item-divider item-borderless">
+        <p><b>课程信息</b></p>
+      </div>
+
+      <div class="item item-borderless">
+        <p>课程名称：{{courseInfo_1.name}}</p>
+        <p>时间：{{courseInfo_1.time}} </p>
+        <p>教室：{{courseInfo_1.classroom}}</p>
+      </div>
+
+      <div class="item item-divider item-borderless">
+        <p><b>学生列表</b></p>
+      </div>
+
+
+      <div class="item ">
+        <b>选取的学生为:  {{studentChoosen_1.Name}}</b>
+      </div>
+
+      <ion-radio ng-repeat="item in studentList_1"
+                 ng-value= "item.Name"
+                 ng-model="studentChoosen_1.Name"
+                 ng-change="changeStudentChoosen_1(item)">
+        {{item.StudentNo}} {{ item.Name }}
+      </ion-radio>
+      </div>
+
+
+
+
+    </div>
+
+
+  </ion-content>
+  <div class="bar bar-footer bar-positive">
+    <div class=" button-bar">
+      <a style="margin-right: 10px;" class="button button-clear light" ng-click="attendanceRequire()"><b>要求签到</b></a>
+    </div>
+  </div>
+
+
+</ion-view>

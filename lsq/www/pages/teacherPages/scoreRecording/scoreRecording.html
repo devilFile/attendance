@@ -1,0 +1,121 @@
+<ion-view view-title="成绩录入">
+  <ion-header-bar class="bar bar-positive">
+    <button class="button button-icon ion-chevron-left button-small" ng-click="goBack()"></button>
+    <h1 class="title"><b>成绩录入</b></h1>
+
+    <style>
+      .col_now{
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        text-align: center;
+      }
+    </style>
+
+  </ion-header-bar>
+
+  <ion-content class="has-header">
+    <div class="list">
+
+
+      <div class="row item item-borderless item-divider">
+        <div class="col col-20">
+          <div align="center" style="padding-top: 10px"><b>课程</b></div>
+        </div>
+
+        <div class="col col-60 item item-input item-select">
+          <select ng-change="changeCourseChoosen(courseChoosen)" ng-model="courseChoosen">
+            <option ng-repeat="item in teacherAttendanceSheetCourse" value="{{item.courseName}}">{{item.courseName}}</option>
+          </select>
+        </div>
+
+        <div class="col" style="padding-left: 20px">
+          <button class="button button-stable" ng-click="chooseCourse()">
+            <i class="icon  ion-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-30" style="padding-top: 20px">
+          <b>选择平时成绩的比例：</b>
+         </div>
+        <div class="col_now" style="margin-top: 10px">
+           <input type="number" ng-model="calculateScoreRate" ng-change="changeSubmit(calculateScoreRate)" placeholder="输入0~100">
+        </div>
+      </div>
+
+      <div>
+        <div class="row ">
+          <div class="col col_now">
+            <div class="col-demo"><b>学号</b></div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo"><b>姓名</b></div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo"><b>平时成绩</b></div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo"><b>期末成绩</b></div>
+          </div>
+          <div class="col col_now">
+            <div class="col-demo"><b>最终成绩</b></div>
+          </div>
+        </div>
+
+        <div class="row" ng-repeat="item in teacherScoreInfo">
+
+          <div class="col col_now">
+            <div class="col-demo">{{item.No}}</div>
+          </div>
+
+          <div class="col col_now">
+            <div class="col-demo">{{item.Name}}</div>
+          </div>
+
+          <div class="col col-20 col_now" style="padding-top: 0px">
+            <div class="col-demo">
+              <input type="number" ng-model="item.UsualPerformance" ng-change="changeSubmit(item.UsualPerformance)">
+            </div>
+          </div>
+
+          <div class="col col-20 col_now" style="padding-top: 0px">
+            <div class="col-demo">
+              <input type="number" ng-model="item.FinalExamScore" ng-change="changeSubmit(item.FinalExamScore)">
+            </div>
+          </div>
+
+        <div class="col col-20 col_now">
+            <div class="col-demo" ng-model="item.TotalScore">
+             {{(item.UsualPerformance*calculateScoreRate/100+item.FinalExamScore*(1-calculateScoreRate/100))}}
+            </div>
+          </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer bar-positive">
+    <div class=" button-bar">
+      <a style="margin-right: 10px;" class="button button-clear light" ng-click="attendanceRequire()"><b>成绩提交</b></a>
+    </div>
+  </div>
+
+</ion-view>
