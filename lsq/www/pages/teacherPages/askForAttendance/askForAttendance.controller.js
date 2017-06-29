@@ -41,6 +41,13 @@
           console.log(x);
         };
 
+        $scope.askForAttendanceFunction = function () {
+          $ionicPopup.alert({
+            title:'已要求该生签到',
+            okText:'确定',
+            okType:'button-positive'
+          });
+        }
 
 
 

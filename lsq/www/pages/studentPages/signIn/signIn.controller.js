@@ -73,9 +73,13 @@
 
 
 
-
+        //签到函数
         $scope.signInFunction = function () {
-          
+          $ionicPopup.alert({
+            title:'已签到',
+            okText:'确定',
+            okType:'button-positive'
+          });
         };
 
 

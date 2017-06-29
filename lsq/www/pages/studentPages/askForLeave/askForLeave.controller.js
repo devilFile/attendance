@@ -3,10 +3,9 @@
  */
 (function () {
   'use strict';
-  angular.module('starter.controllers' )
-    .controller('askForLeaveCtrl', ['$scope','$state','$ionicHistory','CategoryService','$ionicActionSheet','$ionicPopup' ,'$cordovaBarcodeScanner','$cordovaCamera','$cordovaImagePicker',
-      '$cordovaToast',
-      function ($scope,$state,$ionicHistory,CategoryService,$ionicActionSheet,$ionicPopup,$ionicModal ) {
+  angular.module('starter.controllers')
+    .controller('askForLeaveCtrl',
+      function ($scope,$state,$ionicHistory,ionicDatePicker,$ionicPopup) {
 
         $scope.goBack=function () {
           $ionicHistory.nextViewOptions({
@@ -15,21 +14,17 @@
           });
           $state.go('app.playlists');
           //$ionicHistory.goBack();
-        }
+        };
 
 
-        $ionicModal.fromTemplateUrl('templates/modal.html', {
-          scope: $scope
-        }).then(function(modal) {
-          $scope.modal = modal;
-        });
 
+        /*
         $ionicModal.fromTemplateUrl('pages/datepicker/ionic-datepicker-modal.html', {
           scope: $scope
         }).then(function(modal) {
           $scope.modal = modal;
         })
-
+        */
 
         //请假表模型
         $scope.askForLeaveInfo ={
@@ -48,6 +43,36 @@
           {text:'病假'},
           {text:'其它'}
         ];
+
+
+
+        //时间控件
+        $scope.selectedDate1;
+        $scope.openDatePickerOne = function (val) {
+          var ipObj1 = {
+            callback: function (val) {  //Mandatory
+              console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+              $scope.selectedDate1 = new Date(val);
+            },
+            disabledDates: [
+              new Date(2016, 2, 16),
+              new Date(2015, 3, 16),
+              new Date(2015, 4, 16),
+              new Date(2015, 5, 16),
+              new Date('Wednesday, August 12, 2015'),
+              new Date("08-16-2016"),
+              new Date(1439676000000)
+            ],
+            from: new Date(2012, 1, 1),
+            to: new Date(2018, 10, 30),
+            inputDate: new Date(),
+            mondayFirst: true,
+            disableWeekdays: [],
+            closeOnSelect: false,
+            templateType: 'popup'
+          };
+          ionicDatePicker.openDatePicker(ipObj1);
+        };
 
 
         //
@@ -83,13 +108,18 @@
         };
 
 
-        $scope.submitLeaveForm = function () {
-
+        //请假函数
+        $scope.askForLeaveFunction = function () {
+          $ionicPopup.alert({
+            title:'你的申请已提交',
+            okText:'确定',
+            okType:'button-positive'
+          });
         };
 
 
 
 
 
-      }]);
+      });
 })();

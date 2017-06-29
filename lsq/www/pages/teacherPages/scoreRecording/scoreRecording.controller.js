@@ -4,6 +4,8 @@
 /**
  * Created by Liu Shiqin on 2017/6/26.
  */
+
+
 (function () {
   'use strict';
   angular.module('starter.controllers')
@@ -76,9 +78,12 @@
         $scope.calculateScoreRate = 50;
 
 
-        $scope.save = function () {
-          //$cordovaToast.showLongBottom('用户名不能为空');
-          $cordovaToast.show('用户名不能为空','long','center');
+        $scope.scoreRecordingFunction = function () {
+          $ionicPopup.alert({
+            title:'成绩提交成功',
+            okText:'确定',
+            okType:'button-positive'
+          });
         };
 
 
@@ -87,3 +92,9 @@
 
       }]);
 })();
+
+
+
+
+
+

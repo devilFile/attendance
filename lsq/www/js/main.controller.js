@@ -5,7 +5,7 @@
 (function () {
     'use strict';
   var APP_KEY = 'App';//全局常量
-    angular.module('starter.controllers')
+    angular.module('starter.controllers',['ionic','ionic-datepicker'])
         .controller('MainCtrl',['$scope','LocalStorageService','$state',
             function ($scope,LocalStorageService,$state) {
 
